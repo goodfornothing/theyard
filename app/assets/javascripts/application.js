@@ -15,4 +15,4 @@
 //= require jquery.validate.min
 //= require jquery_ujs
 //= require spin.min
-//= require stirchley
+//= require theyard
