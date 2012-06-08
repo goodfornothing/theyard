@@ -1,0 +1,13 @@
+<section id="introduction">
+
+</section>
+
+<section id="subscribe">
+	<p>Show your support and sign up to our mailing list to keep up to date with our progress</p>
+	<%= simple_form_for @supporter, :html => { :remote => true } do |f| %>
+		<%= f.input :name %>
+		<%= f.input :email %>
+		<%= f.button :submit, :value => "Subscribe" %>
+	<% end %>
+	<span class="spin"></span>
+</section>
