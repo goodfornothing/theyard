@@ -1,11 +1,9 @@
 class Supporter < ActiveRecord::Base
   
-  attr_accessible :name, :email
+  attr_accessible :email
   
   validates :email,  :presence => true
-  validates :name, :presence => true
   
-  subscribe_to "Supporters", :using => { :api_key => 'b8bb743223437f266688797e0ca868df-us5',
-                                        :email => :email, 
-                                        :fields => {:NAME => :name}}
+  subscribe_to "The Yard", :using => { :api_key => '55a0506960cc2dfcf5f84b896f7e3c90-us5', :email => :email}
+  
 end

@@ -1,13 +1,33 @@
-<section id="introduction">
+<section id="about">
+
+	<img class="desc" src="<%= asset_path "reuse-examples.jpg" %>" alt="Examples of recycled products" />
+
+	<article>
+		<h1>Don’t just &lsquo;tip&rsquo; your junk </h1>
+		<p>Sutton Coldfield will soon be home to Birmingham's first community re-use hub. Located next to the existing household recycling centre in Norris Way, The Yard offers a socially responsible and eco-friendly alternative to recycling.</p>
+		
+		<section id="subscribe">
+			<h2>Get The Yard's newsletter</h2>
+			<div id="support_form">
+				<%= simple_form_for @supporter, :html => { :remote => true } do |f| %>
+					<%= f.input :email, :label => "Enter your email address" %>
+					<%= f.button :submit, :value => "Subscribe" %>
+				<% end %>
+			</div>
+			<span class="spin"></span>
+		</section>
+		
+		<h2>Latest from The Yard</h2>
+		<% if @tweet.present? %>
+			<div id="tweet">
+				<a class="avatar" href="http://twitter.com/<%= @tweet.user.screen_name %>"><img src="<%= @tweet.user.profile_image_url %>" /></a>
+				<div class="tweet">
+					<time><%= @tweet.created_at.strftime("%d %B %Y %H:%M") %> from <a href="http://twitter.com/<%= @tweet.user.screen_name %>">@<%= @tweet.user.screen_name %></a></time>
+					<span class="body"><%= auto_link(@tweet.text).html_safe %></span>
+				</div>
+			</div>
+		<% end %>
+	</article>
 
 </section>
 
-<section id="subscribe">
-	<p>Show your support and sign up to our mailing list to keep up to date with our progress</p>
-	<%= simple_form_for @supporter, :html => { :remote => true } do |f| %>
-		<%= f.input :name %>
-		<%= f.input :email %>
-		<%= f.button :submit, :value => "Subscribe" %>
-	<% end %>
-	<span class="spin"></span>
-</section>

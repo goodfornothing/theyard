@@ -13,7 +13,7 @@ var spinner_opts = {
   width: 2, // The line thickness
   radius: 4, // The radius of the inner circle
   rotate: 0, // The rotation offset
-  color: '#ffffff', // #rgb or #rrggbb
+  color: '#000000', // #rgb or #rrggbb
   speed: 2, // Rounds per second
   trail: 44, // Afterglow percentage
   shadow: false, // Whether to render a shadow
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	$('.string').each(function(i,el){
 		
 		$(el).find('label').hide();
-		label_text = $(el).find('label').text();
+		label_text = $(el).find('label').text().replace('*','');
 		$(el).find('input').val(label_text);
 		$(el).find('input').data('label_text', label_text);
 		
@@ -64,12 +64,6 @@ $(document).ready(function() {
 	 	spinner = new Spinner(spinner_opts).spin();
 		$('.spin').append(spinner.el);
 		$(this).find('.button').attr('disabled','disabled');
-	});
-	
-	$('#new_supporter').on('ajax:complete', function(event, xhr, status) {
-		$('.spin').html();
-		$(this).find('.button').removeAttr('disabled');
-		
 	});
 	
 });

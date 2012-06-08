@@ -2,6 +2,7 @@ class SupportersController < ApplicationController
 
 	def new
 	  @supporter = Supporter.new
+	  @tweet = Twitter.user_timeline("emmausleeds").first
   end
   
   def create

@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'hominid'
 gem 'mailchimp_subscriber'
 gem 'pg'
+gem 'twitter'
+gem 'twitter-text'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
